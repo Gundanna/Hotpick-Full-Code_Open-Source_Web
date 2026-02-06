@@ -1,17 +1,38 @@
-PROPRIETARY SOURCE CODE - DO NOT DISTRIBUTE
+================================================================
+PROPRIETARY AND CONFIDENTIAL - ARNAV PARASHETTI
+================================================================
+Copyright (c) 2026 Arnav Parashetti. All Rights Reserved.
 
-Copyright (c) 2024-2026 Arnav Parashetti. All rights reserved.
+1. OWNERSHIP OF INTELLECTUAL PROPERTY
+This software, including all source code, logic, documentation, and 
+graphical assets, is the sole and exclusive property of Arnav Parashetti. 
+This is NOT open-source software.
 
-1. OWNERSHIP & RESTRICTIONS
-This software and all associated source code are the exclusive property of Arnav Parashetti. This is NOT open-source software. Unauthorized copying, distribution, or use of these files, via any medium, is strictly prohibited. No part of this code may be used in other projects without express written consent.
+2. ACCESS & AUTHORIZATION
+Access to this codebase is granted on a "per-task" basis and only to 
+members of the "Hotpick Group" who have received explicit, written 
+approval from Arnav Parashetti. Access is a privilege, not a right, 
+and may be revoked at any time without notice.
 
-2. AUTHORIZED MODIFICATION (HOTPICK GROUP)
-Only individuals explicitly recognized by Arnav Parashetti as members of the "Hotpick Group" are permitted to modify this codebase. 
+3. STRICT MODIFICATION RULES
+Authorized contributors are permitted to modify the code ONLY under the 
+following conditions:
+   a) They have received specific, documented instructions for the task.
+   b) They follow the provided instructions without deviation.
+   c) They do not use this code for any purpose outside of the 
+      Hotpick App project.
 
-3. COMPLIANCE WITH INSTRUCTIONS
-All authorized contributors must edit the code strictly according to the specific instructions provided by Arnav Parashetti. Any modifications made outside of these instructions or without prior approval are considered unauthorized.
+4. CODE INTEGRITY & ANTI-SABOTAGE
+Contributors are strictly prohibited from intentionally introducing 
+defects, vulnerabilities, backdoors, or any code intended to sabotage, 
+degrade, or harm the software's performance or integrity. Any such 
+action will be considered a breach of contract and property damage.
 
-4. NO TRANSFER OF RIGHTS
-Participation in the Hotpick Group or contributing code to this repository does NOT grant the contributor any ownership, copyright, or permission to reuse the code for personal or external projects.
+5. NO TRANSFER OF RIGHTS
+Contributions made to this project do not grant the contributor any 
+copyright or ownership interest. All work performed is considered 
+"work for hire" under the ownership of Arnav Parashetti.
 
-This code is provided "as is" without any warranties of any kind.
+DISCLAIMER: THIS SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY 
+OF ANY KIND. UNAUTHORIZED USE WILL BE PROSECUTED.
+================================================================
