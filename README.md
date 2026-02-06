@@ -13,7 +13,7 @@ This software is **Proprietary**. By accessing this repository, you agree to the
 * **Controlled Access:** Only the **Hotpick Group** may access this code, subject to individual approval.
 * **Instructional Compliance:** All development must strictly follow instructions from Arnav Parashetti.
 
-For the full legal declaration, see [Copyright.txt](./Copyright.txt).
+For the full legal declaration, see [copyright.txt](./copyright.txt).
 
 ---
 
