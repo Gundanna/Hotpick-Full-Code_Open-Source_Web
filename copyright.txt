@@ -1,0 +1,17 @@
+PROPRIETARY SOURCE CODE - DO NOT DISTRIBUTE
+
+Copyright (c) 2024-2026 Arnav Parashetti. All rights reserved.
+
+1. OWNERSHIP & RESTRICTIONS
+This software and all associated source code are the exclusive property of Arnav Parashetti. This is NOT open-source software. Unauthorized copying, distribution, or use of these files, via any medium, is strictly prohibited. No part of this code may be used in other projects without express written consent.
+
+2. AUTHORIZED MODIFICATION (HOTPICK GROUP)
+Only individuals explicitly recognized by Arnav Parashetti as members of the "Hotpick Group" are permitted to modify this codebase. 
+
+3. COMPLIANCE WITH INSTRUCTIONS
+All authorized contributors must edit the code strictly according to the specific instructions provided by Arnav Parashetti. Any modifications made outside of these instructions or without prior approval are considered unauthorized.
+
+4. NO TRANSFER OF RIGHTS
+Participation in the Hotpick Group or contributing code to this repository does NOT grant the contributor any ownership, copyright, or permission to reuse the code for personal or external projects.
+
+This code is provided "as is" without any warranties of any kind.
