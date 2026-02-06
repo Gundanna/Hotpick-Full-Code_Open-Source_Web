@@ -2,6 +2,7 @@
 PROPRIETARY AND CONFIDENTIAL - ARNAV PARASHETTI
 ================================================================
 Copyright (c) 2026 Arnav Parashetti. All Rights Reserved.
+This license applies to everything within this repository.
 
 1. OWNERSHIP OF INTELLECTUAL PROPERTY
 This software, including all source code, logic, documentation, and 
