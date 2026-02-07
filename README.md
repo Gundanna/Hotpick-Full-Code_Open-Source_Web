@@ -1,4 +1,4 @@
-# Hotpick App Closed-Souce Code
+# Hotpick App Closed-Souce Code Web
 
 > [!CAUTION]
 > **PROPRIETARY AND CONFIDENTIAL INFORMATION**
