@@ -32,4 +32,4 @@ All contributors must maintain the highest standards of engineering integrity:
 
 ---
 
-© 2024-2026 Arnav Parashetti. All Rights Reserved.
+© 2026 Arnav Parashetti. All Rights Reserved.
