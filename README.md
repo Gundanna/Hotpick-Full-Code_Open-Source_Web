@@ -10,7 +10,7 @@
 ## ⚖️ Legal Notice
 This software is **Proprietary**. By accessing this repository, you agree to the following:
 * **No License:** No rights are granted for use, modification, or distribution.
-* **Controlled Access:** Only the **Hotpick Group** may access this code, subject to individual approval.
+* **Controlled Access:** Only the **Hotpick Authorities Group** may access this code, subject to individual approval.
 * **Instructional Compliance:** All development must strictly follow instructions from Arnav Parashetti.
 
 For the full legal declaration, see [license.txt](./license.txt).
@@ -22,7 +22,7 @@ Hotpick is a proprietary application platform. The code within this repository r
 
 ---
 
-## 👥 Contributor Protocol (Hotpick Group)
+## 👥 Contributor Protocol (Hotpick Authorities Group)
 All contributors must maintain the highest standards of engineering integrity:
 
 1. **Explicit Approval:** You must have written permission for every code change you attempt.
