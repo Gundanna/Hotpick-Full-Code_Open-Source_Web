@@ -11,7 +11,7 @@ This is NOT open-source software.
 
 2. ACCESS & AUTHORIZATION
 Access to this codebase is granted on a "per-task" basis and only to 
-members of the "Hotpick Group" who have received explicit, written 
+members of the "Hotpick Authorities Group" who have received explicit, written 
 approval from Arnav Parashetti. Access is a privilege, not a right, 
 and may be revoked at any time without notice.
 
