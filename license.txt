@@ -21,7 +21,7 @@ following conditions:
    a) They have received specific, documented instructions for the task.
    b) They follow the provided instructions without deviation.
    c) They do not use this code for any purpose outside of the 
-      Hotpick App project.
+      Hotpick Web project.
 
 4. CODE INTEGRITY & ANTI-SABOTAGE
 Contributors are strictly prohibited from intentionally introducing 
