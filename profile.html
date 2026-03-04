@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile • Hotpick</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css"/>
+    <link rel="stylesheet" href="profile.css"/>
+    <link rel="icon" href="hotpickfaviocnimg copy.png"/>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-storage-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script defer type="module" src="profile.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <a class="iojdoisjfds2e2edsf" href="home.html"><img class="nav-logo" src="Logo-Hotpick.png" alt="Hotpick offical logo"/></a>
+        <ul class="owefk">
+            <li><a href="home.html" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,120v96a8,8,0,0,1-8,8H160a8,8,0,0,1-8-8V164a4,4,0,0,0-4-4H108a4,4,0,0,0-4,4v52a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V120a16,16,0,0,1,4.69-11.31l80-80a16,16,0,0,1,22.62,0l80,80A16,16,0,0,1,224,120Z"></path></svg>Home</a></li>
+            <li><a href="challenge.html" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M200,64V192a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V136H104v56a16,16,0,0,1-16,16H72a16,16,0,0,1-16-16V64A16,16,0,0,1,72,48H88a16,16,0,0,1,16,16v56h48V64a16,16,0,0,1,16-16h16A16,16,0,0,1,200,64ZM36,72H32A16,16,0,0,0,16,88v32H8.27A8.18,8.18,0,0,0,0,127.47,8,8,0,0,0,8,136h8v32a16,16,0,0,0,16,16h4a4,4,0,0,0,4-4V76A4,4,0,0,0,36,72Zm220,55.47a8.18,8.18,0,0,0-8.25-7.47H240V88a16,16,0,0,0-16-16h-4a4,4,0,0,0-4,4V180a4,4,0,0,0,4,4h4a16,16,0,0,0,16-16V136h8A8,8,0,0,0,256,127.47Z"></path></svg>Challenges</a></li>
+            <li><a href="#" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm51.58,57.79-32,64a4.08,4.08,0,0,1-1.79,1.79l-64,32a4,4,0,0,1-5.37-5.37l32-64a4.08,4.08,0,0,1,1.79-1.79l64-32A4,4,0,0,1,179.58,81.79Z"></path></svg>Explore</a></li>
+            <li><a class="nav-li-btn skdoifjiojfijdfioejwfsearchfirefox"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M168,112a56,56,0,1,1-56-56A56,56,0,0,1,168,112Zm61.66,117.66a8,8,0,0,1-11.32,0l-50.06-50.07a88,88,0,1,1,11.32-11.31l50.06,50.06A8,8,0,0,1,229.66,229.66ZM112,184a72,72,0,1,0-72-72A72.08,72.08,0,0,0,112,184Z"></path></svg>Search</a></li>
+            <!-- <li><a href="#" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.49,29.8L102,154l41.3,84.87A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14,0-.07-40.06-82.3,48-48a8,8,0,0,0-11.31-11.31l-48,48L24.08,98.25l-.07,0,.14,0L216,40Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M231.4,44.34s0,.1,0,.15l-58.2,191.94a15.88,15.88,0,0,1-14,11.51q-.69.06-1.38.06a15.86,15.86,0,0,1-14.42-9.15L107,164.15a4,4,0,0,1,.77-4.58l57.92-57.92a8,8,0,0,0-11.31-11.31L96.43,148.26a4,4,0,0,1-4.58.77L17.08,112.64a16,16,0,0,1,2.49-29.8l191.94-58.2.15,0A16,16,0,0,1,231.4,44.34Z"></path></svg>Messages</a></li> -->
+            <li><a href="#" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M168,224a8,8,0,0,1-8,8H96a8,8,0,1,1,0-16h64A8,8,0,0,1,168,224Zm53.85-32A15.8,15.8,0,0,1,208,200H48a16,16,0,0,1-13.8-24.06C39.75,166.38,48,139.34,48,104a80,80,0,1,1,160,0c0,35.33,8.26,62.38,13.81,71.94A15.89,15.89,0,0,1,221.84,192ZM208,184c-7.73-13.27-16-43.95-16-80a64,64,0,1,0-128,0c0,36.06-8.28,66.74-16,80Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="nav-icon-fill" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M168,224a8,8,0,0,1-8,8H96a8,8,0,1,1,0-16h64A8,8,0,0,1,168,224Zm53.81-48.06C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H208a16,16,0,0,0,13.8-24.06Z"></path></svg>Notifications</a></li>
+            <li><a href="#" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm40,112H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32a8,8,0,0,1,0,16Z"></path></svg>Create</a></li>
+            <li><a href="#" class="nav-li-btn nav-li-btn-active"><img class="profile-nav-pic" src="LoginUserNoneChanges.png" alt="Your profile image" onerror="this.onerror=null; this.src='imgPersonAccNoan.png'"/>Profile</a></li>
+            <li class="jsdi2jwjijsqv2u2"><a href="" class="nav-li-btn jsdi2jwjijsqv2u"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 256 256"><path d="M240,128a15.79,15.79,0,0,1-10.5,15l-63.44,23.07L143,229.5a16,16,0,0,1-30,0L89.94,166.06,26.5,143a16,16,0,0,1,0-30L89.94,89.94,113,26.5a16,16,0,0,1,30,0l23.07,63.44L229.5,113A15.79,15.79,0,0,1,240,128Z"></path></svg><span><span class="cnnabcaura">300 aura</span></a></li>
+            <!-- <li><a href="#" class="nav-li-btn nav-li-btn-more"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg><span>More</span></a></li> -->
+        </ul>
+        <ul class="i2ojf">
+            <li><a href="home.html" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,120v96a8,8,0,0,1-8,8H160a8,8,0,0,1-8-8V164a4,4,0,0,0-4-4H108a4,4,0,0,0-4,4v52a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V120a16,16,0,0,1,4.69-11.31l80-80a16,16,0,0,1,22.62,0l80,80A16,16,0,0,1,224,120Z"></path></svg></a></li>
+            <li><a href="challenge.html" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M200,64V192a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V136H104v56a16,16,0,0,1-16,16H72a16,16,0,0,1-16-16V64A16,16,0,0,1,72,48H88a16,16,0,0,1,16,16v56h48V64a16,16,0,0,1,16-16h16A16,16,0,0,1,200,64ZM36,72H32A16,16,0,0,0,16,88v32H8.27A8.18,8.18,0,0,0,0,127.47,8,8,0,0,0,8,136h8v32a16,16,0,0,0,16,16h4a4,4,0,0,0,4-4V76A4,4,0,0,0,36,72Zm220,55.47a8.18,8.18,0,0,0-8.25-7.47H240V88a16,16,0,0,0-16-16h-4a4,4,0,0,0-4,4V180a4,4,0,0,0,4,4h4a16,16,0,0,0,16-16V136h8A8,8,0,0,0,256,127.47Z"></path></svg></a></li>
+            <li><a href="#" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm51.58,57.79-32,64a4.08,4.08,0,0,1-1.79,1.79l-64,32a4,4,0,0,1-5.37-5.37l32-64a4.08,4.08,0,0,1,1.79-1.79l64-32A4,4,0,0,1,179.58,81.79Z"></path></svg></a></li>
+            <li><a href="#" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M168,112a56,56,0,1,1-56-56A56,56,0,0,1,168,112Zm61.66,117.66a8,8,0,0,1-11.32,0l-50.06-50.07a88,88,0,1,1,11.32-11.31l50.06,50.06A8,8,0,0,1,229.66,229.66ZM112,184a72,72,0,1,0-72-72A72.08,72.08,0,0,0,112,184Z"></path></svg></a></li>
+            <!-- <li><a href="#" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.49,29.8L102,154l41.3,84.87A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14,0-.07-40.06-82.3,48-48a8,8,0,0,0-11.31-11.31l-48,48L24.08,98.25l-.07,0,.14,0L216,40Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M231.4,44.34s0,.1,0,.15l-58.2,191.94a15.88,15.88,0,0,1-14,11.51q-.69.06-1.38.06a15.86,15.86,0,0,1-14.42-9.15L107,164.15a4,4,0,0,1,.77-4.58l57.92-57.92a8,8,0,0,0-11.31-11.31L96.43,148.26a4,4,0,0,1-4.58.77L17.08,112.64a16,16,0,0,1,2.49-29.8l191.94-58.2.15,0A16,16,0,0,1,231.4,44.34Z"></path></svg></a></li> -->
+            <li><a href="#" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M168,224a8,8,0,0,1-8,8H96a8,8,0,1,1,0-16h64A8,8,0,0,1,168,224Zm53.85-32A15.8,15.8,0,0,1,208,200H48a16,16,0,0,1-13.8-24.06C39.75,166.38,48,139.34,48,104a80,80,0,1,1,160,0c0,35.33,8.26,62.38,13.81,71.94A15.89,15.89,0,0,1,221.84,192ZM208,184c-7.73-13.27-16-43.95-16-80a64,64,0,1,0-128,0c0,36.06-8.28,66.74-16,80Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="nav-icon-fill" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M168,224a8,8,0,0,1-8,8H96a8,8,0,1,1,0-16h64A8,8,0,0,1,168,224Zm53.81-48.06C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H208a16,16,0,0,0,13.8-24.06Z"></path></svg></a></li>
+            <li><a href="#" class="nav-li-btn"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path></svg><svg class="nav-icon-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm40,112H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32a8,8,0,0,1,0,16Z"></path></svg></a></li>
+            <li><a href="#" class="nav-li-btn nav-li-btn-active"><img class="profile-nav-pic" src="LoginUserNoneChanges.png" alt="Your profile image" onerror="this.onerror=null; this.src='imgPersonAccNoan.png'"/></a></li>
+            <!-- <li><a href="#" class="nav-li-btn nav-li-btn-more"><svg class="nav-icon-regular" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg></a></li> -->
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="sii3j3eiojeiosussy">
+        <div class="sadii3jiejiewweikaty">
+            <div class="sdijoi3j3i4kks"></div>
+            <div class="didjiojoi3joi2j3o22222">
+            <div class="sidjoi3jroijewr12ufodetected">
+                <p class="a3ii4jjkdmvskdsddkslakdm4mdcnn">arnavTheGOAT</p>
+                <p class="adiji3jrijrioekpop"></p>
+            </div>
+            <div class="idiejiojr32d">
+                <button class="sdko2kskdlspecialedit">Edit profile</button>
+                <button class="sharebtnNowjejoir"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M237.66,106.35l-80-80A8,8,0,0,0,144,32V72.35c-25.94,2.22-54.59,14.92-78.16,34.91-28.38,24.08-46.05,55.11-49.76,87.37a12,12,0,0,0,20.68,9.58h0c11-11.71,50.14-48.74,107.24-52V192a8,8,0,0,0,13.66,5.65l80-80A8,8,0,0,0,237.66,106.35ZM160,172.69V144a8,8,0,0,0-8-8c-28.08,0-55.43,7.33-81.29,21.8a196.17,196.17,0,0,0-36.57,26.52c5.8-23.84,20.42-46.51,42.05-64.86C99.41,99.77,127.75,88,152,88a8,8,0,0,0,8-8V51.32L220.69,112Z"></path></svg></button>
+            </div>
+            <div class="si3ijiejeoiwjstats">
+                <p class="soi3oi32jroirjelikes ijoijiojio"><span class="dfidsfjoidsjfamericafollowing">20</span>following</p>
+                <p class="soi3oi32jroirjelikes ijoijiojio"><span class="dfidsfjoidsjfamericafollowing">20</span>followers</p>
+                <p class="soi3oi32jroirjelikes ijoijiojio"><span class="dfidsfjoidsjfamericafollowing">20</span>completitions</p>
+                <p class="soi3oi32jroirjelikes ijoijiojio"><span class="dfidsfjoidsjfamericafollowing">20</span>stageDumps</p>
+                <p class="soi3oi32jroirjelikes"><span class="dfidsfjoidsjfamericafollowing">20</span>likes</p>
+                <p class="soi3oi32jroirjelikes"><span class="dfidsfjoidsjfamericafollowing">20</span>trophies</p>
+            </div>
+            <p class="disdoiji3ojiofjbito">Bio TBD.</p>
+            </div>
+        </div>
+    </div>
+    <div class="sdiadiojir32ji3rkfmvmdvlkdvposts">
+        <div class="asdidoij2icmksdjak">
+            <p class="asdidoij2icmksdjak2 djcsoic3i asdidoij2icmksdjak2-active">Posts</p>
+            <p class="asdidoij2icmksdjak2 djcsoic3i2">Challenges</p>
+            <p class="asdidoij2icmksdjak2">Awarded</p>
+            <p class="asdidoij2icmksdjak2">Liked</p>
+            <p class="asdidoij2icmksdjak2">Saved</p>
+        </div>
+        <div class="asidjoijrioj2rioj4io43jriearth">
+
+        </div>
+        <div class="sdijoi3oirj32roijewroiewjbbcdic2 djcsoic3i2 hide">
+        <div class="asidjoijrioj2rioj4io43jriearth2">
+            <a href="#" class="idjfoij3oj232ihqplex">The one spicy chip challenge</a>
+            <div class="sdiodjio32i32skibid">
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+            </div>
+        </div>
+        <div class="asidjoijrioj2rioj4io43jriearth2">
+            <a href="#" class="idjfoij3oj232ihqplex">The one spicy chip challenge</a>
+            <div class="sdiodjio32i32skibid">
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+                <div class="sidjasodjaoisdbbcdic">
+                <div class="sfoiwoifewoijf332re">
+                    <div class="post-display-img-vid-width dwergt565trfdcxszzzz" classification="${trueData.classification}">
+                        <video class="ahdskajsd" muted loop playsinline>
+                            <source src="Untitled design.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="jeifjiewf">
+                            <!-- <p class="efiwe" wid="100" color="red" bGcolor="blue" ftsize="20" tp="10%" lef="20%" hei="auto"><span class="kds2d">The Bills Are The Best Team In The NFL</span></p> -->
+                        </div>
+                        <div class="ewfjioi31111">
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Zm0-152V168a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-68,56a8,8,0,0,0-3.41-6.55l-40-28A8,8,0,0,0,108,84v56a8,8,0,0,0,12.59,6.55l40-28A8,8,0,0,0,164,112Z"></path></svg></p>
+                            <p class="asjoi3221111 l-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>0</p>
+                            <p class="asjoi3221111 c-433"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"></path></svg>0</p>
+                        </div>
+                    </div>
+                    <p class="sdijoij3ioekmksmokdoky"></p>
+                </div>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb">${theAeroText}</p>
+                <p class="skiifjoij4ioj45oi43jnvszebracnvmnvnvjdb sdjisojd"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path></svg>${theAercoText}</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
